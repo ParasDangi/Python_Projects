@@ -1,3 +1,3 @@
 # Python
 There are several Projects available here...................
-install the requirments of packages by us pip install
+install the requirments of packages by using pip install
