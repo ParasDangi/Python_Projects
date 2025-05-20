@@ -2,7 +2,7 @@
 There are several Projects available here..............
 Each one are described one by one are as follow...
 
-**##1.Encryption.py**
+#1.Encryption.py
 ## Overview
 This is a simple encryption and decryption tool built using Python and the Tkinter library. It allows users to encrypt and decrypt text messages using a base64 encoding method. The user must enter a secret key (`1234`) to perform these operations. 
 
@@ -53,8 +53,7 @@ A Tkinter-based Python GUI for securely encrypting and decrypting messages using
 ➡️Base64 Encoding (Encryption)
 ➡️Messagebox (Alerts & Errors)
 
-**#2.generate_report_gui.py**
-# Candidate Report Generator - README
+#2.generate_report_gui.py
 
 ## Overview
 This Python-based application generates candidate reports by extracting information from an SQLite database, filling a Word document template, and converting it into a PDF. It provides a user-friendly GUI using Tkinter.
