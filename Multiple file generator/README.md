@@ -1,4 +1,4 @@
-# 2.generate_report_gui.py
+# generate_report_gui.py
 
 ## Overview
 This Python-based application generates candidate reports by extracting information from an SQLite database, filling a Word document template, and converting it into a PDF. It provides a user-friendly GUI using Tkinter.
