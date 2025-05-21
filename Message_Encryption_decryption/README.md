@@ -2,7 +2,7 @@
 There are several Projects available here..............
 Each one are described one by one are as follow...
 
-# 1.Encryption.py
+# Encryption.py
 ## Overview
 This is a simple encryption and decryption tool built using Python and the Tkinter library. It allows users to encrypt and decrypt text messages using a base64 encoding method. The user must enter a secret key (`1234`) to perform these operations. 
 
