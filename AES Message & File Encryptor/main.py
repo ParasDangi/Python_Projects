@@ -40,35 +40,33 @@ def encrypt():
         messagebox.showerror("Error", f"Encryption failed: {str(e)}")
 
 # Decrypt message with Fernet
-def decrypt_file():
+def decrypt():
     password = code.get()
     if not password:
-        messagebox.showerror("File Decryption", "Password is required for file decryption")
-        return
-    file_path = filedialog.askopenfilename()
-    if not file_path:
+        messagebox.showerror("Decryption", "Password is required for decryption")
         return
     try:
         key = get_key(password)
         fernet = Fernet(key)
-        with open(file_path, 'rb') as file:
-            encrypted = file.read()
-        decrypted = fernet.decrypt(encrypted)
 
-        # Recover original extension
-        if file_path.endswith(".enc"):
-            original_ext = os.path.splitext(file_path[:-4])[1]  # get ext before .enc
-            base_name = os.path.splitext(file_path)[0]
-            save_path = base_name + "_decrypted" + original_ext
-        else:
-            save_path = file_path + "_decrypted"
+        message = text1.get(1.0, END).strip()
+        if not message:
+            messagebox.showerror("Decryption", "Enter a message to decrypt")
+            return
 
-        with open(save_path, 'wb') as dec_file:
-            dec_file.write(decrypted)
-        messagebox.showinfo("Success", f"File decrypted successfully: {save_path}")
+        screen2 = Toplevel(screen)
+        screen2.title("Decryption")
+        screen2.geometry("400x200")
+        screen2.configure(bg="#00bd56")
+
+        decrypted_message = fernet.decrypt(message.encode()).decode()
+
+        Label(screen2, text="DECRYPTED MESSAGE", font="arial", fg="white", bg="#00bd56").place(x=10, y=0)
+        text2 = Text(screen2, font="Robote 10", bg="white", relief=GROOVE, wrap=WORD, bd=0)
+        text2.place(x=10, y=40, width=380, height=150)
+        text2.insert(END, decrypted_message)
     except Exception as e:
-        messagebox.showerror("Error", f"File decryption failed: {str(e)}")
-
+        messagebox.showerror("Error", f"Decryption failed: {str(e)}")
 
 # Encrypt a selected file
 def encrypt_file():
@@ -92,7 +90,7 @@ def encrypt_file():
         messagebox.showerror("Error", f"File encryption failed: {str(e)}")
 
 # Decrypt a selected file
-def decrypt():
+def decrypt_file():
     password = code.get()
     if not password:
         messagebox.showerror("File Decryption", "Password is required for file decryption")
@@ -106,7 +104,15 @@ def decrypt():
         with open(file_path, 'rb') as file:
             encrypted = file.read()
         decrypted = fernet.decrypt(encrypted)
-        save_path = file_path.replace(".enc", "_decrypted")
+
+        # Recover original extension
+        if file_path.endswith(".enc"):
+            original_ext = os.path.splitext(file_path[:-4])[1]  # get ext before .enc
+            base_name = os.path.splitext(file_path)[0]
+            save_path = base_name + "_decrypted" + original_ext
+        else:
+            save_path = file_path + "_decrypted"
+
         with open(save_path, 'wb') as dec_file:
             dec_file.write(decrypted)
         messagebox.showinfo("Success", f"File decrypted successfully: {save_path}")
