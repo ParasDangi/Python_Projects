@@ -31,7 +31,6 @@ This repository contains four **Python-based utility applications** designed to 
 - **Efficiency & Performance:** Uses **multi-threading**, **networking**, and **database integration**.
 
 ## Setup & Requirements
-- Python 3.x## Setup & Requirements
 - Python 3.x
 - Required dependencies (install via `pip`):
   - `python-docx`, `pywin32` (for report generation)
