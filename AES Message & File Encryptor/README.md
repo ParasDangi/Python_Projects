@@ -1,4 +1,4 @@
-# AES Message & File Encryptor - README
+# AES Message & File Encryptor
 
 ## Overview
 This application provides **secure encryption and decryption** of messages and files using **AES encryption (via Fernet)**. It allows users to **encrypt text or files with a password**, ensuring confidentiality.
