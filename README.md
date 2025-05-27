@@ -1,39 +1,47 @@
-# Python Utility Projects
+# Python Utility Projects 
 
 ## Overview
-This repository contains multiple Python-based utility projects designed to enhance automation and efficiency in various domains, including **encryption**, **report generation**, and **file transfer**. Each project features a simple yet effective graphical user interface built with Tkinter.
+This repository contains four **Python-based utility applications** designed to simplify encryption, file sharing, and automated document processing. Each tool features an intuitive **GUI using Tkinter** and helps users efficiently manage tasks such as **secure encryption, file transfer, and report generation**.
 
 ## Included Projects
-1. **Message Encryption & Decryption**
-   - A basic encryption tool using base64 encoding.
-   - Allows users to encode and decode messages with a secret key.
-   
-2. **Candidate Report Generator**
-   - Generates candidate reports using SQLite database data.
-   - Fills a Word template and converts to PDF format.
-   - Supports multi-threaded report generation.
+1. **AES Message & File Encryptor**
+   - Encrypts and decrypts text and files using **AES encryption**.
+   - Uses **password-based security** to generate encryption keys.
+   - Supports **file selection and processing**.
 
-3. **File Transfer Application**
-   - Enables sending and receiving files over a local network.
-   - Uses socket programming for direct communication.
-   - Provides an easy-to-use interface for quick sharing.
+2. **Message Encryption & Decryption**
+   - Simple **base64-based encryption** for text messages.
+   - Requires a **secret key** to encrypt and decrypt.
+   - Provides **basic data protection**.
+
+3. **Candidate Report Generator**
+   - Generates personalized **candidate reports** from an **SQLite database**.
+   - Uses **Word templates** and **PDF conversion**.
+   - Supports **multi-threaded document processing**.
+
+4. **File Transfer Application**
+   - Enables **sending and receiving files** over a local network.
+   - Uses **socket programming** for peer-to-peer sharing.
+   - Provides a **GUI for easy file selection and transfer**.
 
 ## Common Features
-- **User-Friendly GUI:** Built with Tkinter for ease of use.
-- **Automation & Efficiency:** Streamlines common tasks such as encryption, reporting, and file transfer.
-- **Python-Based Solutions:** Portable and lightweight applications.
-- **Networking & Database Integration:** Uses sockets and SQLite for data handling.
+- **User-Friendly Interfaces:** All tools leverage Tkinter for interactive UI.
+- **Automation & Security:** Streamlines encryption, file sharing, and reporting.
+- **Python-Based & Lightweight:** Runs seamlessly on local machines.
+- **Efficiency & Performance:** Uses **multi-threading**, **networking**, and **database integration**.
 
 ## Setup & Requirements
 - Python 3.x
 - Required dependencies (install via `pip`):
   - `python-docx`, `pywin32` (for report generation)
-  - `socket`, `sqlite3`, `base64`, `os`, `tkinter` (built-in modules)
-- Ensure necessary files (`template.docx`, `database.db`) exist for respective projects.
+  - `socket`, `sqlite3`, `base64`, `os`, `tkinter`, `cryptography` (built-in modules)
+
+- Ensure necessary files (e.g., `template.docx`, `database.db`) exist for respective projects.
 
 ## Future Enhancements
-- Improve encryption security with stronger algorithms.
-- Enhance report formatting and customization options.
-- Add progress tracking and encryption for file transfers.
+- Improve **security features** for encryption and file transfers.
+- Enhance **report formatting** and customization options.
+- Add **progress tracking** for better user experience.
 
-This repository provides simple yet effective Python utilities for various tasks, making automation accessible and efficient. 🚀
+This repository provides **versatile Python utilities** to make automation and security more accessible! 🚀
+Let me know if you need further refinements.
