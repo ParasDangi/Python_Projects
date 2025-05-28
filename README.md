@@ -41,7 +41,4 @@ This repository contains four **Python-based utility applications** designed to 
 ## Future Enhancements
 - Improve **security features** for encryption and file transfers.
 - Enhance **report formatting** and customization options.
-- Add **progress tracking** for better user experience.
-
-This repository provides **versatile Python utilities** to make automation and security more accessible! 🚀
-Let me know if you need further refinements.
+- Add **progress tracking** for better user experience.   
