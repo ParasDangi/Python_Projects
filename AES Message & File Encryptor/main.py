@@ -27,6 +27,7 @@ def encrypt():
         screen1.title("Encryption")
         screen1.geometry("400x200")
         screen1.configure(bg="#ed3833")
+        screen1.resizable(False,False)
 
         encrypted_message = fernet.encrypt(message.encode()).decode()
 
@@ -55,6 +56,7 @@ def decrypt():
         screen2.title("Decryption")
         screen2.geometry("400x200")
         screen2.configure(bg="#00bd56")
+        screen2.resizable(False,False)
 
         decrypted_message = fernet.decrypt(message.encode()).decode()
 
@@ -64,6 +66,7 @@ def decrypt():
         text2.insert(END, decrypted_message)
     except Exception as e:
         messagebox.showerror("Error", f"Decryption failed: {str(e)}")
+
 # Encrypt a selected file
 def encrypt_file():
     password = code.get()
@@ -84,6 +87,7 @@ def encrypt_file():
         messagebox.showinfo("Success", "File encrypted successfully")
     except Exception as e:
         messagebox.showerror("Error", f"File encryption failed: {str(e)}")
+
 # Decrypt a selected file
 def decrypt_file():
     password = code.get()
@@ -113,20 +117,26 @@ def decrypt_file():
         messagebox.showinfo("Success", f"File decrypted successfully: {save_path}")
     except Exception as e:
         messagebox.showerror("Error", f"File decryption failed: {str(e)}")
+
 # Reset inputs
 def reset():
     code.set("")
     text1.delete(1.0, END)
+
 # UI Setup
 screen = Tk()
 screen.geometry("600x500")
 screen.title("AES Message & File Encryptor")
+screen.resizable(False,False)
 code = StringVar()
 text1 = Text(font=("Robote", 15), bg="white", relief=GROOVE, wrap=WORD, bd=0)
+
 Label(text="Enter text for encryption and decryption", fg="black", font=("Arial", 16)).place(x=10, y=10)
 text1.place(x=10, y=50, width=570, height=100)
+
 Label(text="Enter secret Key", fg="black", font=("Arial", 16)).place(x=10, y=170)
 Entry(textvariable=code, width=30, bd=0, font=("Arial", 16), show="*").place(x=10, y=210)
+
 Button(text="ENCRYPT MESSAGE", command=encrypt, height="2", width="25", bg="#ed3833", fg="white", bd=0).place(x=10, y=260)
 Button(text="DECRYPT MESSAGE", command=decrypt, height="2", width="25", bg="#00bd56", fg="white", bd=0).place(x=300, y=260)
 Button(text="ENCRYPT FILE", command=encrypt_file, height="2", width="25", bg="#8a2be2", fg="white", bd=0).place(x=10, y=320)
