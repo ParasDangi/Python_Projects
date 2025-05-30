@@ -1,6 +1,4 @@
 # Python
-There are several Projects available here..............
-Each one are described one by one are as follow...
 
 # Encryption.py
 ## Overview
