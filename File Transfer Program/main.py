@@ -54,9 +54,6 @@ def Send():
 
     Button(window,text="+ select file",width=10,height=1,font='arial 14 bold',bg="#fff",fg="#000",command=select_file).place(x=160,y=150)
     Button(window,text="SEND",width=8,height=1,font='arial 14 bold',bg='#000',fg="#fff",command=Sender).place(x=300,y=150)
-
-
-
     window.mainloop()
 
 def Receive():
