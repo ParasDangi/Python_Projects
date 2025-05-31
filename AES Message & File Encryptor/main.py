@@ -125,21 +125,32 @@ def reset():
 
 # UI Setup
 screen = Tk()
-screen.geometry("600x500")
+screen.geometry("590x680")
 screen.title("AES Message & File Encryptor")
 screen.resizable(False,False)
+image_icon=PhotoImage(file="Image/icon.png")
+screen.iconphoto(False,image_icon)
 code = StringVar()
+
 text1 = Text(font=("Robote", 15), bg="white", relief=GROOVE, wrap=WORD, bd=0)
+text1.place(x=10, y=48, width=560, height=130)
 
 Label(text="Enter text for encryption and decryption", fg="black", font=("Arial", 16)).place(x=10, y=10)
-text1.place(x=10, y=50, width=570, height=100)
 
-Label(text="Enter secret Key", fg="black", font=("Arial", 16)).place(x=10, y=170)
-Entry(textvariable=code, width=30, bd=0, font=("Arial", 16), show="*").place(x=10, y=210)
+Label(text="Enter secret Key", fg="black", font=("Arial", 16)).place(x=10, y=180)
+Entry(textvariable=code, width=30, bd=0, font=("Arial", 16), show="*").place(x=10, y=208)
 
-Button(text="ENCRYPT MESSAGE", command=encrypt, height="2", width="25", bg="#ed3833", fg="white", bd=0).place(x=10, y=260)
-Button(text="DECRYPT MESSAGE", command=decrypt, height="2", width="25", bg="#00bd56", fg="white", bd=0).place(x=300, y=260)
-Button(text="ENCRYPT FILE", command=encrypt_file, height="2", width="25", bg="#8a2be2", fg="white", bd=0).place(x=10, y=320)
-Button(text="DECRYPT FILE", command=decrypt_file, height="2", width="25", bg="#ff8c00", fg="white", bd=0).place(x=300, y=320)
-Button(text="RESET", command=reset, height="2", width="60", bg='#1089ff', fg="white", bd=0).place(x=10, y=380)
+encrypt_image=PhotoImage(file="Image/encrypt.png")
+encrypt=Button(text="ENCRYPT MESSAGE", image=encrypt_image,command=encrypt,bd=0).place(x=10, y=260)
+
+decrypt_image=PhotoImage(file="Image/decrypt.png")
+decrypt=Button(image=decrypt_image,command=decrypt,bd=0).place(x=310, y=250)
+
+encrypt_file_image=PhotoImage(file="Image/encrypt_file.png")
+encrypt_file=Button( image=encrypt_file_image,command=encrypt_file,bd=0).place(x=10, y=400)
+
+decrypt_file_image=PhotoImage(file="Image/decrypt_file.png")
+decrypt_file=Button(image=decrypt_file_image, command=decrypt_file,bd=0).place(x=310, y=400)
+
+Button(text="RESET", command=reset, height="2", width="60", bg='#1089ff', fg="white", bd=0).place(x=10, y=550)
 screen.mainloop()
