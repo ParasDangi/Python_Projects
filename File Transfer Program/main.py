@@ -109,6 +109,7 @@ root.iconphoto(False,image_icon)
 
 Label(root,text="File Transfer",font=('Acumin variable Concept',20,'bold'),bg="#f4fdfe").place(x=20,y=30)
 Frame(root,width=400,height=2,bg="#f3f5f6").place(x=25,y=80)
+
 send_image=PhotoImage(file="Image/send.png")
 send=Button(root,image=send_image,bg="#f4fdfe",bd=0,command=Send)
 send.place(x=50,y=100)
